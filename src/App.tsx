@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Container, Header, Main } from './styles';
 import { Item } from './types/Item';
+import { ListItem } from './components/ListItem';
 
 function App() {
   const [tasks, setTasks] = useState<Item[]>([
@@ -13,7 +14,7 @@ function App() {
         <>
           <Header>ToDo List</Header>
           {tasks.map((task, index) => (
-            <div>{task.name}</div>
+            <ListItem key={index} item={task} />
           ))}
         </>
       </Main>
