@@ -19,7 +19,7 @@ export function AddTask({ onEnter }: AddTaskProps) {
       <div className="image">➕</div>
       <input
         type="text"
-        placeholder="Add a task"
+        placeholder="Add a task and press Enter"
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         onKeyUp={handleKeyUp}
