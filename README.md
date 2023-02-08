@@ -10,18 +10,26 @@
 <p>
 
 <p align="center">
- <a href="#bookmark_tabs-about">About</a> •
-<a href="#hammer-technologies">Technologies</a> •
- <a href="#triangular_ruler-status-do-projeto">Status</a> •
-<a href="#computer-deploy">Deploy</a> •
- <a href="#dvd-running-the-project">Running</a> •
- <a href="#boy-author">Author</a> •
- <a href="#page_facing_up-license">License</a>
+  <a href="#bookmark_tabs-about">About</a> •
+  <a href="#fire-extra-features">Extra features</a> •
+  <a href="#hammer-technologies">Technologies</a> •
+  <a href="#triangular_ruler-status-do-projeto">Status</a> •
+  <a href="#computer-deploy">Deploy</a> •
+  <a href="#dvd-running-the-project">Running</a> •
+  <a href="#boy-author">Author</a> •
+  <a href="#page_facing_up-license">License</a>
 </p>
 
 ## :bookmark_tabs: About
 
 Project developed during the React course taught by [B7web](https://alunos.b7web.com.br/login). The project is a task list, which allows adding tasks, deleting and editing.
+
+---
+
+## :fire: Extra features
+
+- [x] Application refactoring using componentization
+- [x] Added global state management with MobX
 
 ---
 
