@@ -1,21 +1,23 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Container, Header, Main } from './styles';
 import { Item } from './types/Item';
 import { ListItem } from './components/ListItem';
 import { AddTask } from './components/AddTask';
 import { tasks as tasksList } from './data/tasks';
+import { observer } from 'mobx-react-lite';
+import TaskStore from './stores/TaskStore';
 
-function App() {
-  const [tasks, setTasks] = useState<Item[]>(tasksList);
+const App = observer(() => {
+  const { tasks, setTask } = useContext(TaskStore);
+  // const [tasks, setTasks] = useState<Item[]>(tasksList);
 
   function handleAddTask(taskName: string) {
-    let newList = [...tasks];
-    newList.push({
+    let newTask = {
       id: tasks.length + 1,
       name: taskName,
       done: false,
-    });
-    setTasks(newList);
+    };
+    setTask(newTask);
   }
 
   return (
@@ -31,6 +33,6 @@ function App() {
       </Main>
     </Container>
   );
-}
+});
 
 export default App;
