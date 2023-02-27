@@ -22,9 +22,19 @@ export const AddTask = observer(() => {
       setInputText('');
     }
   }
+
+  function handleClickButton() {
+    if (inputText) {
+      handleAddTask(inputText);
+      setInputText('');
+    }
+  }
+
   return (
     <Container>
-      <div className="image">➕</div>
+      <div className="image" onClick={handleClickButton}>
+        ➕
+      </div>
       <input
         type="text"
         placeholder="Add a task and press Enter"

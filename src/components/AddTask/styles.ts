@@ -8,6 +8,10 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
+  div {
+    cursor: pointer;
+  }
+
   .image {
     margin-right: 5px;
   }
