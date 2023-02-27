@@ -16,17 +16,20 @@ export const AddTask = observer(() => {
     setTask(newTask);
   }
 
+  function addTask() {
+    handleAddTask(inputText);
+    setInputText('');
+  }
+
   function handleKeyUp(e: KeyboardEvent) {
     if (e.code === 'Enter' && inputText) {
-      handleAddTask(inputText);
-      setInputText('');
+      addTask();
     }
   }
 
   function handleClickButton() {
     if (inputText) {
-      handleAddTask(inputText);
-      setInputText('');
+      addTask();
     }
   }
 
