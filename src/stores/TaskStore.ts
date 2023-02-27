@@ -1,5 +1,6 @@
 import { observable, makeAutoObservable, action } from 'mobx';
 import { createContext } from 'react';
+import { searchPosition } from '../helpers/searchPosition';
 import { Item } from '../types/Item';
 
 class TaskStore {
@@ -17,11 +18,8 @@ class TaskStore {
   };
 
   setDone = (id: number) => {
-    for (let i = 0; i < this.tasks.length; i++) {
-      if (this.tasks[i].id === id) {
-        this.tasks[i].done = !this.tasks[i].done;
-      }
-    }
+    let position = searchPosition(this.tasks, id);
+    this.tasks[position].done = !this.tasks[position].done;
   };
 }
 
