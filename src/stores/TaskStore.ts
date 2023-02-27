@@ -10,6 +10,7 @@ class TaskStore {
       tasks: observable,
       setTask: action,
       setDone: action,
+      deleteTask: action,
     });
   }
 
@@ -20,6 +21,12 @@ class TaskStore {
   setDone = (id: number) => {
     let position = searchPosition(this.tasks, id);
     this.tasks[position].done = !this.tasks[position].done;
+  };
+
+  deleteTask = (id: number) => {
+    let position = searchPosition(this.tasks, id);
+    let newTaskList = this.tasks.filter((task, index) => index !== position);
+    this.tasks = newTaskList;
   };
 }
 
